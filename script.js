@@ -1,8 +1,13 @@
-function stringChop(str, size) {
-  // your code here
+function firstWord(str) {
+    if (!str) return ""; 
+
+
+    return str.trim().split(" ")[0];
 }
 
-// Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+function displayFirstWord() {
+    let inputText = document.getElementById("inputText").value;
+    let result = firstWord(inputText);
+    document.getElementById("result").textContent = result ? `First word: ${result}` : "No word found!";
+}
+
